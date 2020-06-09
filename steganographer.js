@@ -1,17 +1,20 @@
-// Mr. Steganographer
+// Image Steganographer
 // Written by Rutuparn Pawar (InputBlackBoxOutput)
 
-const sourceimage = document.querySelector('img');
+const sourceimage = document.getElementById('img');
 const sinkimage = document.getElementById('img-text');
+
 const canvas = document.createElement('canvas');
 const context = canvas.getContext('2d');
-canvas.style.display = 'none';
+
+// Uncomment below code and canvas tag in body to help debug 
+// const canvas = document.getElementById('canvas');
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 // Move alert from open to text element!
 
 document.getElementById('open-one').addEventListener('click', function () { open(1); });
-document.getElementById('open-two').addEventListener('click', function () { open(0);});
+document.getElementById('open-two').addEventListener('click', function () { open(0); });
 
 function open(which) {
 	let file = document.createElement("INPUT");
@@ -34,7 +37,22 @@ function open(which) {
 						return;
 					}
 					else {
-						transferImgToCanvas(which);
+						canvas.width = sourceimage.offsetWidth;
+						canvas.height = sourceimage.offsetHeight;
+						context.drawImage(sourceimage, 0, 0, sourceimage.offsetWidth, sourceimage.offsetHeight);	
+					}
+				
+				}
+
+				sinkimage.onload = function () {
+					if(sourceimage.width > 1000 || sourceimage.height > 1000) {
+						alert("Image should less than 1000 x 1000 pixels in size");
+						return;
+					}
+					else {
+						canvas.width = sinkimage.offsetWidth;
+						canvas.height = sinkimage.offsetHeight;
+						context.drawImage(sinkimage, 0, 0, sinkimage.offsetWidth, sinkimage.offsetHeight);	
 					}
 				
 				}
@@ -56,18 +74,23 @@ rand_img.addEventListener('click', function() {
 	sourceimage.src = `img/random/rand_img (${n}).png`;
 	sourceimage.width = 200;
 	sourceimage.height = 200;
+
+	sourceimage.onload = function () {
+		canvas.width = sourceimage.offsetWidth;
+		canvas.height = sourceimage.offsetHeight;
+		context.drawImage(sourceimage, 0, 0, sourceimage.offsetWidth, sourceimage.offsetHeight);	
+	}
+
 });
 
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
-document.getElementById('download-image').addEventListener('click', function () {
-	sourceimage.click();	
-});
 
 oupt = document.getElementById('output');
 document.getElementById('download-text').addEventListener('click', function () {
-	saveAsTextFile(oupt.value, 'message.txt', 'text/plain');
+	if(!(/extracted/i.test(output.innerText)))
+	saveAsTextFile(oupt.innerText, 'message.txt', 'text/plain');
 });
-
 
 
 function saveAsTextFile(data, fileExt, type) {
@@ -88,22 +111,8 @@ function saveAsTextFile(data, fileExt, type) {
     }
  }
 
-// Set canvas when user uploads image => transferImgToCanvas();
-function transferImgToCanvas(which) {
-	let image = undefined;
-	if(which)
-		image = sourceimage;
-	else 
-		image = sinkimage;
-
-	canvas.width = image.offsetWidth;
-	canvas.height = image.offsetHeight;
-	context.drawImage(image, 0, 0);
-}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
-toEmbed = undefined;
-
 embed = document.getElementById('embed');
 
 one_user_msg = document.getElementById('user-msg-one');
@@ -128,7 +137,7 @@ embed.addEventListener('click', function () {
 		embedDataIntoImage();
 		one_user_msg.hidden = true;
 
-		one_done_.innerText = "Message encrypted & embedded into image. You can now download the image";
+		one_done_.innerText = "Message encrypted & embedded into image. Downloading image .....";
 		one_done_.hidden = false;
 	}
 	else {
@@ -188,6 +197,16 @@ function embedDataIntoImage() {
 
 	console.log(pixels.data);
 	context.putImageData(pixels, 0, 0);
+
+		url =  canvas.toDataURL('image/png');
+
+		let a = document.createElement('a');
+		a.href = url;
+		a.download = "secret.png";
+
+		document.body.appendChild(a);
+		a.click();
+		document.body.removeChild(a);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -205,36 +224,8 @@ function extractDataFromImage() {
 		if(imgData[i+3] == 94) break;  // 94 = '^'
 	} 
 
-	oupt.innerText ="Message: " + decryptText(textData.substr(1, textData.length-1));
+	oupt.innerText ="Message: " + decryptText(textData.substr(1, textData.length-2));
 }
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////
-window.addEventListener('load', function(ev) {
-
-	 function processDownload(ev) {
- 		let t = ev.target;
- 		if (t.tagName === 'IMG') {
- 			canvas.height = t.offsetHeight;
- 			canvas.width = t.offsetWidth;
- 			context.drawImage(t, 0, 0, t.offsetWidth, t.offsetHeight);
-
- 			if(toEmbed) {
- 				url =  canvas.toDataURL('image/png');
-
- 				let a = document.createElement('a');
- 				a.href = url;
- 				a.download = "secret.png";
-
- 				document.body.appendChild(a);
- 				a.click();
- 				document.body.removeChild(a);
- 			}	
- 		}
-	 }
-
-	 document.body.addEventListener('click', processDownload, false);
- } ,false);
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -350,25 +341,11 @@ function decryptText(code) {
 	}
 	return msg;
 }
-/////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
-// Aditional canvas functions (Not utilized)
+// Not utilized: To be implemnted in the future
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// Aditional canvas functions 
 
 function rotate() {
 	let imgwidth = sourceimage.offsetWidth;

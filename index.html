@@ -9,18 +9,15 @@
     </head>
 
     <body style="background-color: grey">
-    	<template><canvas></canvas></template>
-
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <a class="navbar-brand"><h3>Image Steganographer</h3> </a>
           <div class="navbar-collapse float-right">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item ">
-                <a class="nav-link" href="how_to_use.html">How to use?</a>
+                <a class="nav-link active" href="how_to_use.html" >How to use?</a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link active" href="about.html">About</a>
               </li>
             </ul>
           </div>
@@ -37,17 +34,19 @@
 			</div>
         </div> -->
 
+        <!-- <canvas id="canvas"></canvas> -->
+
 		<div id="main" class="container-fluid my-2 py-3" style="background-color: white" >
 			<h2> Embedder </h2>	
 			<hr>				
             <div class="row m-2 mt-3">
                 <div class="col mt-3">
                     <div class="row d-flex justify-content-center">
-                        <img style="border: 2px #AFAFAF solid" class="img-fluid" height="300" width="300" src="img/blank.png">
+                        <img id="img" style="border: 2px #AFAFAF solid" class="img-fluid" height="300" width="300" src="img/blank.png" alt="Upload an image">
                     </div>
                     <div class="row mt-2 d-flex justify-content-center">
-                        <button id="open-one" type="button" class="btn btn-primary btn-lg m-2" style="width: 15rem"> Upload </button>
-                        <button id="open-rand" type="button" class="btn btn-primary btn-lg m-2" style="width: 15rem;"> Use a random image </button>
+                        <button id="open-one" type="button" class="btn btn-primary btn-lg m-2" style="width: 14rem"> Upload </button>
+                        <button id="open-rand" type="button" class="btn btn-primary btn-lg m-2" style="width: 14rem;"> Use a random image </button>
                     </div>          
                 </div>
                 <div class="col ml-2 mt-3">
@@ -63,15 +62,8 @@
                         </div>
 
                         <div >
-                            <button id="embed" type="button" class="btn m-2 btn-success btn-lg"> Embed</button>
-                            <style type="text/css">
-                                #download-image {
-                                    border: 2px #28A745 solid;
-                                    border-radius: 5px;
-                                    margin-left: 10px; 
-                                }
+                            <button id="embed" type="button" class="btn m-2 btn-success btn-lg"> Embed & Download</button>
                             </style>
-                            <img id="download-image" src="img/download.png" height="48" width="48" alt="Download"> 
                         </div>
                         <div class="col mt-2">
                             <div id="user-msg-one" class="alert alert-danger" role="alert"> <!-- Options: danger and success -->   
@@ -92,7 +84,7 @@
 			<div class="row m-2">
 			    <div class="col mt-3">
 			        <div class="row d-flex justify-content-center">
-			            <img id="img-text" style="border: 2px #AFAFAF solid" class="img-fluid" height="300" width="300" src="img/blank.png">
+			            <img id="img-text" style="border: 2px #AFAFAF solid" class="img-fluid" height="300" width="300" src="img/blank.png" alt="Upload an image">
 			        </div>
 			        <div class="row mt-2 d-flex justify-content-center">  
 			            <button id="open-two" type="button" class="btn btn-primary btn-lg m-2" style="width: 15rem"> Upload </button>
@@ -107,14 +99,7 @@
 
 			            <div >
 			            	<button id="extract" type="button" class="btn m-2 btn-success btn-lg "> Extract </button> 
-			                <style type="text/css">
-			                    #download-text {
-			                        border: 2px #28A745 solid;
-			                        border-radius: 5px;
-			                        margin-left: 10px; 
-			                    }
-			                </style>
-			                <img id="download-text" src="img/download.png" height="48" width="48" alt="Download"> 
+                            <button id="download-text" type="button" class="btn m-2 btn-success btn-lg "> Download as text file </button>
 			            </div>
 			            <div class="col mt-2">
 			                <div id="user-msg-two" class="alert alert-danger" role="alert"> <!-- Options: danger and success -->   
@@ -143,7 +128,7 @@
             <p> Steganography is the practice of concealing a file, message, image, or video within another file, message, image, or video. Steganography is concerned both with concealing the fact that a secret message is being sent and its contents while cryptography is the practice of protecting the contents of a message alone.</p>
 
             <p>The advantage of steganography over cryptography alone is that the intended secret message does not attract attention to itself as an object of scrutiny. Plainly visible encrypted messages, no matter how unbreakable they are, arouse interest. </p>
-            <p><b> Source:</b> <a href="#">Wikipedia</a></p>
+            <p><b> Source:</b> <a href="https://en.wikipedia.org/wiki/Steganography"> Wikipedia </a></p>
             
             <br>
             <h4>The process of hiding and retriving message in an image</h4>
