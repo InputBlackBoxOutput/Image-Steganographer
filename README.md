@@ -3,6 +3,11 @@ Embed encrypted messages in an image and then extract them back
 
 Hosted @ https://inputblackboxoutput.github.io/Image-Steganographer/
 
+## Things to note
+| This cat can hold more than just the Tesseract  | Area 51 can hold on to a lot of secrects, add in your own |
+|:---:|:---:|
+| ![Captain Marvel's cat](img/goose.jpg)  | ![Area 51](img/area51.jpg)  |
+
 ## How to use?
 
 ### How to use the embedder to embed a message into an image?
