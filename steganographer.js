@@ -67,6 +67,7 @@ function open(which) {
 	file.click();
 }
 
+/*
 
 rand_img = document.getElementById('open-rand');
 rand_img.addEventListener('click', function() {
@@ -83,7 +84,7 @@ rand_img.addEventListener('click', function() {
 
 });
 
-
+*/
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 oupt = document.getElementById('output');
