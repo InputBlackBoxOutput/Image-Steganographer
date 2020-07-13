@@ -17,6 +17,7 @@ document.getElementById('open-one').addEventListener('click', function () { open
 document.getElementById('open-two').addEventListener('click', function () { open(0); });
 
 function open(which) {
+	rand_img = false;
 	let file = document.createElement("INPUT");
 	file.setAttribute("type", "file");
 
@@ -67,24 +68,42 @@ function open(which) {
 	file.click();
 }
 
-/*
 
+rand_img = false;
 rand_img = document.getElementById('open-rand');
 rand_img.addEventListener('click', function() {
 	n = (Math.floor(Math.random() * 30) + 1);
 	sourceimage.src = `img/random/rand_img (${n}).png`;
-	sourceimage.width = 200;
-	sourceimage.height = 200;
 
 	sourceimage.onload = function () {
 		canvas.width = sourceimage.offsetWidth;
 		canvas.height = sourceimage.offsetHeight;
 		context.drawImage(sourceimage, 0, 0, sourceimage.offsetWidth, sourceimage.offsetHeight);	
 	}
-
+	rand_img = true;
 });
 
-*/
+
+document.getElementById("goose").addEventListener('click', function() {
+	sourceimage.src = `img/goose.jpg`;
+	sourceimage.onload = function () {
+		canvas.width = sourceimage.offsetWidth;
+		canvas.height = sourceimage.offsetHeight;
+		context.drawImage(sourceimage, 0, 0, sourceimage.offsetWidth, sourceimage.offsetHeight);	
+	}
+	rand_img = true;
+});
+
+document.getElementById("area51").addEventListener('click', function() {
+	sourceimage.src = `img/area51.jpg`;
+	sourceimage.onload = function () {
+		canvas.width = sourceimage.offsetWidth;
+		canvas.height = sourceimage.offsetHeight;
+		context.drawImage(sourceimage, 0, 0, sourceimage.offsetWidth, sourceimage.offsetHeight);	
+	}
+	rand_img = true;
+});
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 oupt = document.getElementById('output');
@@ -182,7 +201,7 @@ extract.addEventListener('click', function () {
 function embedDataIntoImage() {
 	let pixels = context.getImageData(0, 0, canvas.width, canvas.height);
 	let imgData = pixels.data;
-
+	
 	textData = encryptText(text);
 
 	// Adding start and stop tokens to know where to start and stop scanning while decrypting 
@@ -192,22 +211,21 @@ function embedDataIntoImage() {
 	for (var i = 0; i < imgData.length; i += 4) {
 		imgData[i+3] = (textData.charCodeAt(loc));
 		loc++;
-		
 		if(loc == textData.length) break;
 	} 
 
 	console.log(pixels.data);
 	context.putImageData(pixels, 0, 0);
 
-		url =  canvas.toDataURL('image/png');
+	url =  canvas.toDataURL('image/png');
 
-		let a = document.createElement('a');
-		a.href = url;
-		a.download = "secret.png";
+	let a = document.createElement('a');
+	a.href = url;
+	a.download = "secret.png";
 
-		document.body.appendChild(a);
-		a.click();
-		document.body.removeChild(a);
+	document.body.appendChild(a);
+	a.click();
+	document.body.removeChild(a);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -219,7 +237,8 @@ function extractDataFromImage() {
 	
 	textData = "";
 	for (var i = 0; i < imgData.length; i += 4) {
-		char = String.fromCharCode(imgData[i+3]);
+		if(imgData[i+3] != 0)
+			char = String.fromCharCode(imgData[i+3]);
 		textData += char;
 		
 		if(imgData[i+3] == 94) break;  // 94 = '^'
@@ -248,18 +267,18 @@ const kywrd_two = document.getElementById('keyword-two');
 
 message_.onchange = function () {
 	text = message.value;
-	console.log(text);
+	// console.log(text);
 }
 
 // Check for valid keyword!
 kywrd_one.onchange = function () {
 	keyword = kywrd_one.value;
-	console.log(keyword);
+	// console.log(keyword);
 }
 
 kywrd_two.onchange = function () {
 	keyword = kywrd_two.value;
-	console.log(keyword);
+	// console.log(keyword);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -287,7 +306,7 @@ function createVigeneresSquare() {
 	}
 
 	// for(let i=0; i<26; i++) {
-	// 	console.log(vigenereSquare[i]);
+	// 	// console.log(vigenereSquare[i]);
 	// }
 }
 
