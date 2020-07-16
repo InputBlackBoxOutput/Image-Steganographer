@@ -72,7 +72,7 @@ function open(which) {
 rand_img = false;
 rand_img = document.getElementById('open-rand');
 rand_img.addEventListener('click', function() {
-	n = (Math.floor(Math.random() * 30) + 1);
+	n = (Math.floor(Math.random() * 15) + 1);
 	sourceimage.src = `img/random/rand_img (${n}).png`;
 
 	sourceimage.onload = function () {
@@ -429,4 +429,17 @@ function getColour(color) {
 		
 	context.putImageData(pixels, 0, 0);
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// Preloading random images
+var images = new Array()
+
+function preload() {
+	for(let i =1; i<=15; i++) {
+		images[i] = new Image();
+		images[i].src = $"img/random/rand_img ({i})";
+	}
+}
+
+preload();
 /////////////////////////////////////////////////////////////////////////////////////////////////
