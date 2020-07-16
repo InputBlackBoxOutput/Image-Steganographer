@@ -437,7 +437,7 @@ var images = new Array()
 function preload() {
 	for(let i =1; i<=15; i++) {
 		images[i] = new Image();
-		images[i].src = $"img/random/rand_img ({i})";
+		images[i].src = "img/random/rand_img (${i}).png";
 	}
 }
 
