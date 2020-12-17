@@ -60,7 +60,8 @@
                             <textarea class="form-control" id="message" rows="3" placeholder="Your message here" style="resize: none;"></textarea>
                         </div>
 
-                        <div >
+                        <label><b>Note:</b> Do not modify the image in any way otherwise the message will be lost</label>
+                        <div>
                             <button id="embed" type="button" class="btn m-2 btn-success btn-lg"> Embed & Download</button>
                         </div>
                         <div class="col mt-2">
@@ -97,7 +98,6 @@
 
 			            <div >
 			            	<button id="extract" type="button" class="btn m-2 btn-success btn-lg "> Extract </button> 
-                            <button id="download-text" type="button" class="btn m-2 btn-success btn-lg "> Download as text file </button>
 			            </div>
 			            <div class="col mt-2">
 			                <div id="user-msg-two" class="alert alert-danger" role="alert"> <!-- Options: danger and success -->   
@@ -108,7 +108,8 @@
 			            <hr>
 			            <div class="row m-2">
 			                <h4 id="output"> Text extracted from the image will be shown here </h4>
-			            </div>
+                        </div>
+                        <button id="download-text" type="button" class="btn m-2 btn-success btn-lg "> Download as text file </button>
 			            <hr>       
 			        </form>  
 			    </div>

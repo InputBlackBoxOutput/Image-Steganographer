@@ -188,8 +188,6 @@ extract.addEventListener('click', function () {
 		extractDataFromImage();
 		two_user_msg.hidden = true;
 
-		two_done_.innerText = "Message extracted from image";
-		two_done_.hidden = false;
 	}
 	else {
 		two_user_msg.hidden = false;
@@ -244,7 +242,19 @@ function extractDataFromImage() {
 		if(imgData[i+3] == 94) break;  // 94 = '^'
 	} 
 
-	oupt.innerText ="Message: " + decryptText(textData.substr(1, textData.length-2));
+	msg = decryptText(textData.substr(1, textData.length-2));
+	if('Ÿ' == msg[0] && 'Ÿ' == msg[1] && 'Ÿ' == msg[2]) {
+		two_done_.hidden = true;
+		oupt.innerText = "The embedded text was lost. \nThis happens when the image is modified";
+		oupt.style.cssText = "color:red";
+	}
+	else {
+		two_done_.innerText = "Message extracted from image";
+		two_done_.hidden = false;
+
+		oupt.innerText ="Message: " + msg;
+		oupt.style.cssText = "color:black";
+	}
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
