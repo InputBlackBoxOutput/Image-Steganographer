@@ -24,12 +24,8 @@
           <a class="navbar-brand"><h3>Image Steganographer</h3> </a>
           <div class="navbar-collapse float-right">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item ">
-                <a class="nav-link active" href="how_to_use.html" >How to use?</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link active" href="about.html">About</a>
-              </li>
+                <label class="btn rounded btn-secondary mr-2 mb-0" data-toggle="modal" data-target="#howToUseModal"> How to use? </label>
+                <label class="btn rounded btn-secondary mb-0" data-toggle="modal" data-target="#aboutModal"> About </label>
             </ul>
           </div>
         </nav>
@@ -176,16 +172,85 @@
                     border-radius: 10px; 
                     padding: 10px;
             </style>
-            <h5 id="disclaimer"> <b>Legal Disclaimer:</b> The creator/s of this website cannot be held responsible in case of misuse of this website for activities not permitted by law in the user's country</h5>
+            <h5 id="disclaimer"> <b>Legal Disclaimer:</b> The creator/s of this website cannot be held responsible in case of misuse of this website for activities not permitted by law in the users country</h5>
         </div>
 
         <div class="row m-0 p-0" style="background-color: #343A40">
             <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-                <p class="h6"> This website has been hosted by Github Pages </p>
-                <p class="h6">© 2020 Rutuparn Pawar < <a style="color: white" href="https://github.com/InputBlackBoxOutput">InputBlackBoxOutput<a> ></p>
+                <p class="h6">© 2020 Rutuparn Pawar ( <a style="color: white" href="https://github.com/InputBlackBoxOutput">InputBlackBoxOutput<a> )</p>
             </div>
             <hr>
         </div>
-	<script type="text/javascript" src="steganographer.js"></script>
+
+        <!--About modal-->
+        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="globalModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="globalModalLabel"> About </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p> This website was created to let you embed encrypted messages in an image and then extract them back whenever you want</p>
+                        <p> <a href="https://github.com/InputBlackBoxOutput/Image-Steganographer" target="_blank">See repository on GitHub</a></p>
+                        <p> Created by Rutuparn Pawar (InputBlackBoxOutput)</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How to use Modal-->
+        <div class="modal fade" id="howToUseModal" tabindex="-1" role="dialog" aria-labelledby="globalModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="globalModalLabel"> How to use? </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5> Steps to embed message in an image: </h5>
+                        <ol>
+                            <li> Upload an image. Alternatively you can use a random image provided by the website</li>
+                            <li> Enter the keyword </li>
+                            <li> Enter the message </li>
+                            <li> Press the embed & download button </li>
+                        </ol>
+                        <br>
+                        <h5> Steps to extract message from an image: </h5>
+                        <ol>
+                            <li> Upload the image containing the message </li>
+                            <li> Enter the keyword </li>
+                            <li> Press the extract button </li>
+                            <li> When a success message is shown, see the section below for the message</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-block btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="steganographer.js"></script>
 	</body>
 </html>
