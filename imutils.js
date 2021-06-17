@@ -10,7 +10,7 @@ function rotate() {
 	canvas.height = imgheight;
 
 	context.translate(imgwidth / 2, imgheight / 2);
-	context.rotate(Math.PI/2);
+	context.rotate(Math.PI / 2);
 	context.drawImage(sourceimage, -(imgwidth / 2), -(imgheight / 2));
 }
 
@@ -48,21 +48,21 @@ function getColour(color) {
 	var pixels = context.getImageData(0, 0, canvas.width, canvas.height);
 	var data = pixels.data;
 
-	switch(color) {
-		case 'R': for (var i = 0; i < pixels.data.length; i += 4) { data[i+1] = 0; data[i+2] = 0;} break;
-		case 'G': for (var i = 0; i < pixels.data.length; i += 4) { data[i+0] = 0; data[i+2] = 0;} break;
-		case 'B': for (var i = 0; i < pixels.data.length; i += 4) { data[i+0] = 0; data[i+1] = 0;} break;
-		case 'A': for (var i = 0; i < pixels.data.length; i += 4) { data[i+0] = 0; data[i+1] = 0; data[i+2] = 0;} break;
+	switch (color) {
+		case 'R': for (var i = 0; i < pixels.data.length; i += 4) { data[i + 1] = 0; data[i + 2] = 0; } break;
+		case 'G': for (var i = 0; i < pixels.data.length; i += 4) { data[i + 0] = 0; data[i + 2] = 0; } break;
+		case 'B': for (var i = 0; i < pixels.data.length; i += 4) { data[i + 0] = 0; data[i + 1] = 0; } break;
+		case 'A': for (var i = 0; i < pixels.data.length; i += 4) { data[i + 0] = 0; data[i + 1] = 0; data[i + 2] = 0; } break;
 
-		default:let gray = 127;
-				for (var i = 0; i < pixels.data.length; i += 4) {
-					gray = (data[i]+data[i+1]+data[i+2])/3;
-					data[i+0] = gray;
-					data[i+1] = gray;
-					data[i+2] = gray;
-				} 
+		default: let gray = 127;
+			for (var i = 0; i < pixels.data.length; i += 4) {
+				gray = (data[i] + data[i + 1] + data[i + 2]) / 3;
+				data[i + 0] = gray;
+				data[i + 1] = gray;
+				data[i + 2] = gray;
+			}
 	}
-		
+
 	context.putImageData(pixels, 0, 0);
 }
 
@@ -80,6 +80,8 @@ const quotes = [
 ]
 
 function getRandomSecret() {
+	// To be implemented 
+
 	// Set canvas to STEM image
 	// Set key.value = STEM
 	// Set message.value = One of the quotes above
