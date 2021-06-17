@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <title> Image Steganographer </title>
+    <meta name="description" content="Embed encrypted messages in an image and then extract them back">
+</head>
+
+<body>
+    <div class="container-fluid my-2 pt-2 pb-5">
+        <h2> Extractor </h2>
+        <hr>
+        <div class="row m-2">
+            <div class="col mt-3">
+                <div class="row d-flex justify-content-center">
+                    <img id="img-text" style="border: 2px #AFAFAF solid" class="img-fluid" height="300" width="300"
+                        src="img/blank.png" alt="Open image an image">
+                </div>
+                <div class="row mt-2 d-flex justify-content-center">
+                    <button id="extract-open" type="button" class="btn btn-primary btn-lg m-2" style="width: 15rem">
+                        Open image
+                    </button>
+                </div>
+            </div>
+            <div class="col ml-2 mt-3">
+                <form>
+                    <div class="form-group">
+                        <label>Keyword</label>
+                        <input type="text" class="form-control" id="extract-keyword" placeholder="Enter keyword">
+                    </div>
+
+                    <div>
+                        <button id="extract" type="button" class="btn m-2 btn-success btn-lg "> Extract </button>
+                        <button id="extract-reset" type="button" class="btn m-2 btn-danger btn-lg "> Reset </button>
+                    </div>
+                    <div class="col mt-2">
+                        <div id="extract-msg" class="alert alert-danger" role="alert">
+                        </div>
+                        <div id="extract-done" class="alert alert-success" role="alert">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row m-2">
+                        <h5 id="extract-output"> Extracted text will be displayed here! </h5>
+                    </div>
+                    <button id="download-text" type="button" class="btn m-2 btn-success btn-lg "> Save message
+                    </button>
+                    <hr>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="script/cipher.js"></script>
+    <!-- <script type="text/javascript" src="script/embed.js"></script> -->
+    <script type="text/javascript" src="script/extract.js"></script>
+    <script type="text/javascript" src="script/index.js"></script>
+
+</body>
+
+</html>

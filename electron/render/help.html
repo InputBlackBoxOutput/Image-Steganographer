@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" style="scroll-behavior: smooth;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <title> Image Steganographer </title>
+    <meta name="description" content="Embed encrypted messages in an image and then extract them back">
+</head>
+
+<body>
+    <div class="container-fluid my-2 pt-2 pb-5">
+        <h3>Help is here!</h3>
+        <hr>
+        <h5> Steps to embed message in an image: </h5>
+        <ol>
+            <li> Open image an image or use a random image provided by the application</li>
+            <li> Enter the keyword </li>
+            <li> Enter the message </li>
+            <li> Press the embed & download button </li>
+        </ol>
+        <br>
+        <h5> Steps to extract message from an image: </h5>
+        <ol>
+            <li> Open image the image containing the message </li>
+            <li> Enter the keyword </li>
+            <li> Press the extract button </li>
+            <li> When a success message is shown, see the section below for the message</li>
+        </ol>
+
+        <br>
+        <h3>Wondering how it works?</h3>
+        <hr>
+
+        <p> This is an application of <b> Steganography</b>. Steganography is the practice of concealing a file,
+            message, image, or video within another file, message, image, or video. Steganography is concerned both with
+            concealing the fact that a secret message is being sent and its contents while cryptography is the practice
+            of protecting the contents of a message alone.</p>
+
+        <p>The advantage of steganography over cryptography alone is that the intended secret message does not attract
+            attention to itself as an object of scrutiny. Plainly visible encrypted messages, no matter how unbreakable
+            they are, arouse interest. </p>
+        <p><b> Source:</b> <a href="https://en.wikipedia.org/wiki/Steganography" target="_blank"> Wikipedia </a></p>
+
+        <br>
+        <h4>Process of hiding and retriving message in an image</h4>
+        <p> We get an image, a keyword and a message from the user. The message is encrypted with the help of the
+            user-provided keyword by using Vigenere's cipher.</p>
+        <p> Certain binary data in the image is modified to represent the encrypted message. The image looks perfectly
+            normal to the human eye even after embedding the message in the image.</p>
+
+        <p> <i>The following image shows the process flow </i></p>
+        <img class="img-fluid" src="img/flow.png">
+
+        <p> When someone wants to access the message, he/she has to provide the image and the keyword. The encrypted
+            message is extracted from the image and then decrypted using the keyword.</p>
+
+        <hr>
+        <style type="text/css">
+            #disclaimer {
+                color: #FF2020;
+                border: 2px #FF4A4A solid;
+                border-radius: 10px;
+                padding: 10px;
+            }
+        </style>
+        <h5 id="disclaimer"> <b>Legal Disclaimer:</b> The creator/s of this application cannot be held responsible in
+            case
+            of misuse of this application for activities not permitted by law in the users country</h5>
+        <hr>
+    </div>
+</body>
+
+</html>
