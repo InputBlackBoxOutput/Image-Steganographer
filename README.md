@@ -3,7 +3,7 @@ Embed encrypted messages in an image and then extract them back
 
 Website: https://image-steganographer.netlify.app/
 
-Application for Windows OS: https://github.com/InputBlackBoxOutput/Image-Steganographer/releases/tag/v1.0.0
+Application for Windows OS: [https://github.com/.../releases/tag/v1.0.0](https://github.com/InputBlackBoxOutput/Image-Steganographer/releases/tag/v1.0.0)
 
 ## Things to note
 | This cat can hold more than just the Tesseract  | Area 51 can hold on to a lot of secrets, add in your own |
