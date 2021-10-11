@@ -29,7 +29,7 @@
         <div class="navbar-collapse">
             <ul class="navbar-nav ml-auto">
                 <label class="btn rounded btn-secondary mr-1 mb-0 mt-1" data-toggle="modal"
-                    data-target="#help"> Help </label>
+                    data-target="#helpModal"> Help </label>
                 <label class="btn rounded btn-secondary mr-1 mb-0 mt-1" data-toggle="modal" data-target="#aboutModal">
                     About </label>
             </ul>
@@ -163,32 +163,45 @@
 
 
     <div class="container-fluid my-2 py-3" style="background-color: white;">
-        <h2>Wondering how it works?</h2>
+        <h2>🤔 Wondering how it works? </h2>
         <hr>
 
         <p> This is an application of <b> Steganography</b>. Steganography is the practice of concealing a file,
             message, image, or video within another file, message, image, or video. Steganography is concerned both with
             concealing the fact that a secret message is being sent and its contents while cryptography is the practice
-            of protecting the contents of a message alone.</p>
-
-        <p>The advantage of steganography over cryptography alone is that the intended secret message does not attract
-            attention to itself as an object of scrutiny. Plainly visible encrypted messages, no matter how unbreakable
-            they are, arouse interest. </p>
-        <p><b> Source:</b> <a href="https://en.wikipedia.org/wiki/Steganography" target="_blank"> Wikipedia </a></p>
+            of protecting the contents of a message alone. The advantage of steganography over cryptography alone is that the intended secret message does not attract attention to itself as an object of scrutiny. Plainly visible encrypted messages, no matter how unbreakable they are, arouse interest. <small>
+            <b> Source:</b> <a href="https://en.wikipedia.org/wiki/Steganography" target="_blank"> Wikipedia </a>
+        </small>
+        </p>
 
         <br>
-        <h4>Process of hiding and retriving message in an image</h4>
-        <p> We get an image, a keyword and a message from the user. The message is encrypted with the help of the
-            user-provided keyword by using Vigenere's cipher.</p>
-        <p> Certain binary data in the image is modified to represent the encrypted message. The image looks perfectly
-            normal to the human eye even after embedding the message in the image.</p>
+        <div class="row">
+            <div class="col ml-1">
+                <h4>📝 Embedding the message in an image</h4>
+                <ol>
+                    <li> We get the following inputs from the user: an image, a keyword and a message  </li>
+                    <li> The message is encrypted with the help of the keyword by using Vigenere's cipher </li>
+                    <li> The encrypted text is converted to an array of numbers using ASCII encoding </li>
+                    <li> The alpha channel data in the image is modified to represent the array of numbers and a unique end token</li>
+                </ol>
+            </div>
 
+            <div class="col mr-1">
+                <h4>📝 Extracting the message from an image</h4>
+                <ol>
+                    <li> We get the following inputs from the user: an image and a keyword </li>
+                    <li> The alpha channel content of the image is parsed until a unique end token is reached to obtain an array of numbers </li>
+                    <li> The array of numbers is converted to encrypted text using ASCII encoding </li>
+                    <li> The extracted text is decrypted using the keyword and then displayed to the user </li>
+                </ol>
+            </div>
+        </div>
+
+        <br>
         <p> <i>The following image shows the process flow </i></p>
         <img class="img-fluid" src="img/flow.png">
 
-        <p> When someone wants to access the message, he/she has to provide the image and the keyword. The encrypted
-            message is extracted from the image and then decrypted using the keyword.</p>
-
+        <br>
         <a href="#main"> <label class="h2" style="text-decoration: underline;">Try it out now!</label> </a>
 
         <hr>
@@ -223,10 +236,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p> This website was created to let you embed encrypted messages in an image and then extract them
-                        back whenever you want</p>
-                    <p> <a href="https://github.com/InputBlackBoxOutput/Image-Steganographer" target="_blank">See
-                            repository on GitHub</a></p>
+                    <p> On this website, you can embed messages in an image and then extract them back whenever you want.</p>
+                    <p> <a href="https://github.com/InputBlackBoxOutput/Image-Steganographer" target="_blank">See repository on GitHub</a></p>
                     <p> Created by Rutuparn Pawar <br> (InputBlackBoxOutput)</p>
                 </div>
                 <div class="modal-footer">
@@ -236,13 +247,13 @@
         </div>
     </div>
 
-    <!-- How to use Modal-->
-    <div class="modal fade" id="help" tabindex="-1" role="dialog" aria-labelledby="globalModalLabel"
+    <!-- Help modal-->
+    <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="globalModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="globalModalLabel"> How to use? </h5>
+                    <h5 class="modal-title" id="globalModalLabel"> Help </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
