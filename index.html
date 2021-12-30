@@ -2,26 +2,26 @@
 <html lang="en" style="scroll-behavior: smooth;">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168647709-3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-168647709-3');
-    </script>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
+    <title> Image Steganographer </title>
+    <meta name="description" content="Embed encrypted messages in an image and then extract them back whenever required">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title> Image Steganographer </title>
-    <meta name="description" content="Embed encrypted messages in an image and then extract them back">
+
+    <style>
+        body {
+        background-color: grey;
+        }
+
+        .container-fluid {
+        background-color: white;
+        }
+    </style>
 </head>
 
-<body style="background-color: grey">
+<body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand">
             <h3>Image Steganographer</h3>
@@ -36,7 +36,7 @@
         </div>
     </nav>
 
-    <div id="main" class="container-fluid my-2 py-3" style="background-color: white">
+    <div id="main" class="container-fluid my-2 py-3">
         <h2> Embedder </h2>
         <hr>
         <div class="row m-2 mt-3">
@@ -86,7 +86,7 @@
 
 
 
-    <div class="container-fluid my-2 py-3" style="background-color: white;">
+    <div class="container-fluid my-2 py-3">
         <h2> Extractor </h2>
         <hr>
         <div class="row m-2">
@@ -129,7 +129,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid my-2 py-3" style="background-color: white">
+    <div class="container-fluid my-2 py-3">
         <hr>
         <div class="row mx-2">
             <div class="col px-5">
@@ -162,7 +162,7 @@
     </div>
 
 
-    <div class="container-fluid my-2 py-3" style="background-color: white;">
+    <div class="container-fluid my-2 py-3">
         <h2>🤔 Wondering how it works? </h2>
         <hr>
 
@@ -198,12 +198,11 @@
         </div>
 
         <br>
-        <p> <i>The following image shows the process flow </i></p>
-        <img class="img-fluid" src="img/flow.png">
-
-        <br>
-        <a href="#main"> <label class="h2" style="text-decoration: underline;">Try it out now!</label> </a>
-
+        <div class="d-flex justify-content-center"> 
+            <img class="img-fluid" src="img/flow.png"> 
+        </div>
+        
+        <!-- <a href="#main"> <label class="h2" style="text-decoration: underline;">Try it out now!</label> </a> -->
         <hr>
         <style type="text/css">
             #disclaimer {
@@ -213,15 +212,22 @@
                 padding: 10px;
             }
         </style>
-        <h5 id="disclaimer"> <b>Legal Disclaimer:</b> The creator/s of this website cannot be held responsible in case
+        <h5 id="disclaimer" class="text-justify"> <b>Legal Disclaimer:</b> The creator/s of this website cannot be held responsible in case
             of misuse of this website for activities not permitted by law in the users country</h5>
     </div>
 
-    <div class="row m-0 p-0" style="background-color: #343A40;">
-        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-            <p class="h6">© 2020 InputBlackBoxOutput</p>
+    <div class="container-fluid">
+        <div class="row pt-1">
+            <div class="col-md-6">
+                <h6> <a href="terms-and-conditions.html">Terms & Conditions</a> | <a href="privacy-policy.html"> Privacy Policy </a> </h6>
+            </div>
+            <div class="col-md-6">
+                <h6 class="text-right">Copyright © 2021 InputBlackBoxOutput</h6>
+            </div>
+            <hr>
         </div>
-        <hr>
+    </div>
+        
     </div>
 
     <!--About modal-->
