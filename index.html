@@ -166,7 +166,7 @@
         <h2>🤔 Wondering how it works? </h2>
         <hr>
 
-        <p> This is an application of <b> Steganography</b>. Steganography is the practice of concealing a file,
+        <p class="text-justify"> This is an application of <b> Steganography</b>. Steganography is the practice of concealing a file,
             message, image, or video within another file, message, image, or video. Steganography is concerned both with
             concealing the fact that a secret message is being sent and its contents while cryptography is the practice
             of protecting the contents of a message alone. The advantage of steganography over cryptography alone is that the intended secret message does not attract attention to itself as an object of scrutiny. Plainly visible encrypted messages, no matter how unbreakable they are, arouse interest. <small>
@@ -175,8 +175,8 @@
         </p>
 
         <br>
-        <div class="row">
-            <div class="col ml-1">
+        <div class="row text-justify">
+            <div class="col-md-6">
                 <h4>📝 Embedding the message in an image</h4>
                 <ol>
                     <li> We get the following inputs from the user: an image, a keyword and a message  </li>
@@ -186,7 +186,7 @@
                 </ol>
             </div>
 
-            <div class="col mr-1">
+            <div class="col-md-6">
                 <h4>📝 Extracting the message from an image</h4>
                 <ol>
                     <li> We get the following inputs from the user: an image and a keyword </li>
@@ -216,15 +216,27 @@
             of misuse of this website for activities not permitted by law in the users country</h5>
     </div>
 
-    <div class="container-fluid">
-        <div class="row pt-1">
-            <div class="col-md-6">
+    <div class="container-fluid mt-2">
+        <div class="row pt-2">
+            <div id="copyright-1" class="col-md-6">
                 <h6> <a href="terms-and-conditions.html">Terms & Conditions</a> | <a href="privacy-policy.html"> Privacy Policy </a> </h6>
             </div>
-            <div class="col-md-6">
+            <div id="copyright-2" class="col-md-6">
                 <h6 class="text-right">Copyright © 2021 InputBlackBoxOutput</h6>
             </div>
             <hr>
+            <script>
+            if (
+                screen.width < 500 ||
+                navigator.userAgent.match(/Android/i) ||
+                navigator.userAgent.match(/webOS/i) ||
+                navigator.userAgent.match(/iPhone/i) ||
+                navigator.userAgent.match(/iPod/i)
+            ) {
+                document.getElementById("copyright-1").innerHTML = '<h6 class="text-center"> <a href="terms-and-conditions.html">Terms & Conditions</a> | <a href="privacy-policy.html"> Privacy Policy </a> </h6>';
+                document.getElementById("copyright-2").innerHTML = '<h6 class="text-center">Copyright © 2021 InputBlackBoxOutput</h6>';
+            }
+            </script>
         </div>
     </div>
         
@@ -247,7 +259,7 @@
                     <p> Created by Rutuparn Pawar <br> (InputBlackBoxOutput)</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-block btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-block btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -282,7 +294,7 @@
                     </ol>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-block btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-block btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
