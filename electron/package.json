@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "electron .",
+    "build": "electron-packager . image-steganographer --platform=win32 --arch=x64",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rutuparn Pawar",
