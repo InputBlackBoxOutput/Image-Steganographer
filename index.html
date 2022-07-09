@@ -5,18 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title> Image Steganographer </title>
-    <meta name="description" content="Embed encrypted messages in an image and then extract them back whenever required">
+    <meta name="description"
+        content="Embed encrypted messages in an image and then extract them back whenever required">
+
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖼️</text></svg>">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <style>
         body {
-        background-color: grey;
+            background-color: grey;
         }
 
         .container-fluid {
-        background-color: white;
+            background-color: white;
         }
     </style>
 </head>
@@ -28,8 +32,8 @@
         </a>
         <div class="navbar-collapse">
             <ul class="navbar-nav ml-auto">
-                <label class="btn rounded btn-secondary mr-1 mb-0 mt-1" data-toggle="modal"
-                    data-target="#helpModal"> Help </label>
+                <label class="btn rounded btn-secondary mr-1 mb-0 mt-1" data-toggle="modal" data-target="#helpModal">
+                    Help </label>
                 <label class="btn rounded btn-secondary mr-1 mb-0 mt-1" data-toggle="modal" data-target="#aboutModal">
                     About </label>
             </ul>
@@ -166,12 +170,15 @@
         <h2>🤔 Wondering how it works? </h2>
         <hr>
 
-        <p class="text-justify"> This is an application of <b> Steganography</b>. Steganography is the practice of concealing a file,
+        <p class="text-justify"> This is an application of <b> Steganography</b>. Steganography is the practice of
+            concealing a file,
             message, image, or video within another file, message, image, or video. Steganography is concerned both with
             concealing the fact that a secret message is being sent and its contents while cryptography is the practice
-            of protecting the contents of a message alone. The advantage of steganography over cryptography alone is that the intended secret message does not attract attention to itself as an object of scrutiny. Plainly visible encrypted messages, no matter how unbreakable they are, arouse interest. <small>
-            <b> Source:</b> <a href="https://en.wikipedia.org/wiki/Steganography" target="_blank"> Wikipedia </a>
-        </small>
+            of protecting the contents of a message alone. The advantage of steganography over cryptography alone is
+            that the intended secret message does not attract attention to itself as an object of scrutiny. Plainly
+            visible encrypted messages, no matter how unbreakable they are, arouse interest. <small>
+                <b> Source:</b> <a href="https://en.wikipedia.org/wiki/Steganography" target="_blank"> Wikipedia </a>
+            </small>
         </p>
 
         <br>
@@ -179,10 +186,11 @@
             <div class="col-md-6">
                 <h4>📝 Embedding the message in an image</h4>
                 <ol>
-                    <li> We get the following inputs from the user: an image, a keyword and a message  </li>
+                    <li> We get the following inputs from the user: an image, a keyword and a message </li>
                     <li> The message is encrypted with the help of the keyword by using Vigenere's cipher </li>
                     <li> The encrypted text is converted to an array of numbers using ASCII encoding </li>
-                    <li> The alpha channel data in the image is modified to represent the array of numbers and a unique end token</li>
+                    <li> The alpha channel data in the image is modified to represent the array of numbers and a unique
+                        end token</li>
                 </ol>
             </div>
 
@@ -190,7 +198,8 @@
                 <h4>📝 Extracting the message from an image</h4>
                 <ol>
                     <li> We get the following inputs from the user: an image and a keyword </li>
-                    <li> The alpha channel content of the image is parsed until a unique end token is reached to obtain an array of numbers </li>
+                    <li> The alpha channel content of the image is parsed until a unique end token is reached to obtain
+                        an array of numbers </li>
                     <li> The array of numbers is converted to encrypted text using ASCII encoding </li>
                     <li> The extracted text is decrypted using the keyword and then displayed to the user </li>
                 </ol>
@@ -198,10 +207,10 @@
         </div>
 
         <br>
-        <div class="d-flex justify-content-center"> 
-            <img class="img-fluid" src="img/flow.png"> 
+        <div class="d-flex justify-content-center">
+            <img class="img-fluid" src="img/flow.png">
         </div>
-        
+
         <!-- <a href="#main"> <label class="h2" style="text-decoration: underline;">Try it out now!</label> </a> -->
         <hr>
         <style type="text/css">
@@ -212,34 +221,36 @@
                 padding: 10px;
             }
         </style>
-        <h5 id="disclaimer" class="text-justify"> <b>Legal Disclaimer:</b> The creator/s of this website cannot be held responsible in case
+        <h5 id="disclaimer" class="text-justify"> <b>Legal Disclaimer:</b> The creator/s of this website cannot be held
+            responsible in case
             of misuse of this website for activities not permitted by law in the users country</h5>
     </div>
 
     <div class="container-fluid mt-2">
         <div class="row pt-2">
             <div id="copyright-1" class="col-md-6">
-                <h6> <a href="terms-and-conditions.html">Terms & Conditions</a> | <a href="privacy-policy.html"> Privacy Policy </a> </h6>
+                <h6> <a href="terms-and-conditions.html">Terms & Conditions</a> | <a href="privacy-policy.html"> Privacy
+                        Policy </a> </h6>
             </div>
             <div id="copyright-2" class="col-md-6">
                 <h6 class="text-right">Copyright © 2021 InputBlackBoxOutput</h6>
             </div>
             <hr>
             <script>
-            if (
-                screen.width < 500 ||
-                navigator.userAgent.match(/Android/i) ||
-                navigator.userAgent.match(/webOS/i) ||
-                navigator.userAgent.match(/iPhone/i) ||
-                navigator.userAgent.match(/iPod/i)
-            ) {
-                document.getElementById("copyright-1").innerHTML = '<h6 class="text-center"> <a href="terms-and-conditions.html">Terms & Conditions</a> | <a href="privacy-policy.html"> Privacy Policy </a> </h6>';
-                document.getElementById("copyright-2").innerHTML = '<h6 class="text-center">Copyright © 2021 InputBlackBoxOutput</h6>';
-            }
+                if (
+                    screen.width < 500 ||
+                    navigator.userAgent.match(/Android/i) ||
+                    navigator.userAgent.match(/webOS/i) ||
+                    navigator.userAgent.match(/iPhone/i) ||
+                    navigator.userAgent.match(/iPod/i)
+                ) {
+                    document.getElementById("copyright-1").innerHTML = '<h6 class="text-center"> <a href="terms-and-conditions.html">Terms & Conditions</a> | <a href="privacy-policy.html"> Privacy Policy </a> </h6>';
+                    document.getElementById("copyright-2").innerHTML = '<h6 class="text-center">Copyright © 2021 InputBlackBoxOutput</h6>';
+                }
             </script>
         </div>
     </div>
-        
+
     </div>
 
     <!--About modal-->
@@ -254,9 +265,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p> On this website, you can embed messages in an image and then extract them back whenever you want.</p>
-                    <p> <a href="https://github.com/InputBlackBoxOutput/Image-Steganographer" target="_blank">See repository on GitHub</a></p>
-                    <p> Created by Rutuparn Pawar <br> (InputBlackBoxOutput)</p>
+                    <p> On this website, you can embed messages in an image and then extract them back whenever you
+                        want.</p>
+                    <p> <a href="https://github.com/InputBlackBoxOutput/Image-Steganographer" target="_blank">See
+                            repository on GitHub</a></p>
+                    <p> Created by Rutuparn Pawar [InputBlackBoxOutput]</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-block btn-danger" data-dismiss="modal">Close</button>
