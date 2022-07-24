@@ -22,13 +22,17 @@
         .container-fluid {
             background-color: white;
         }
+
+        a {
+            color: #006EE5;
+        }
     </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand">
-            <h3>Image Steganographer</h3>
+        <a class="navbar-brand" href="https://image-steganographer.netlify.app/">
+            <label class="h3">Image Steganographer</label>
         </a>
         <div class="navbar-collapse">
             <ul class="navbar-nav ml-auto">
@@ -41,7 +45,7 @@
     </nav>
 
     <div id="main" class="container-fluid my-2 py-3">
-        <h2> Embedder </h2>
+        <label class="h2"> Embedder </label>
         <hr>
         <div class="row m-2 mt-3">
             <div class="col mt-3">
@@ -58,32 +62,35 @@
                     <!-- <button id="open-one" type="button" class="btn btn-primary btn-lg m-2" style="width: 15rem"> Upload </button>-->
                 </div>
             </div>
-            <div class="col ml-2 mt-3">
+            <div class="col mt-3">
                 <form>
-                    <div class=" row form-group">
+                    <div class="row form-group ml-1">
                         <label>Keyword</label>
                         <input type="text" class="form-control" id="embed-keyword" placeholder="Enter keyword">
                     </div>
 
-                    <div class=" row form-group">
+                    <div class="row form-group ml-1">
                         <label>Message</label>
                         <textarea class="form-control" id="embed-message" rows="3" placeholder="Enter message"
                             style="resize: none;"></textarea>
                     </div>
-
-                    <label><b>Note:</b> Do not modify the image in any way otherwise the message will be lost</label>
-                    <div>
-                        <button id="embed" type="button" class="btn m-2 btn-success btn-lg"> Embed & Download</button>
-                        <button id="embed-reset" type="button" class="btn m-2 btn-danger btn-lg "> Reset </button>
+                    <div class="row ml-2">
+                        <label>
+                            <b>Note:</b> Do not modify the image in any way otherwise the message will be lost
+                        </label>
                     </div>
-                    <div class="col mt-2">
-                        <div id="embed-msg" class="alert alert-danger" role="alert">
-                            <!-- Options: danger and success -->
-                        </div>
-                        <div id="embed-done" class="alert alert-success" role="alert">
-                        </div>
+                    <div class="mt-2 ml-2">
+                        <button id="embed" type="button" class="btn btn-success btn-lg"> Embed & Download</button>
+                        <button id="embed-reset" type="button" class="btn ml-2 btn-danger btn-lg "> Reset </button>
                     </div>
                 </form>
+                <div class="mt-2 pl-2">
+                    <div hidden="true" id="embed-msg" class="alert alert-danger" role="alert">
+                        <!-- Options: danger and success -->
+                    </div>
+                    <div hidden="true" id="embed-done" class="alert alert-success" role="alert">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -91,7 +98,7 @@
 
 
     <div class="container-fluid my-2 py-3">
-        <h2> Extractor </h2>
+        <label class="h2"> Extractor </label>
         <hr>
         <div class="row m-2">
             <div class="col mt-3">
@@ -105,31 +112,34 @@
                     </button>
                 </div>
             </div>
-            <div class="col ml-2 mt-3">
+            <div class="col mt-3">
                 <form>
-                    <div class="form-group">
+                    <div class="row form-group ml-1">
                         <label>Keyword</label>
                         <input type="text" class="form-control" id="extract-keyword" placeholder=" Enter keyword">
                     </div>
 
-                    <div>
-                        <button id="extract" type="button" class="btn m-2 btn-success btn-lg "> Extract </button>
-                        <button id="extract-reset" type="button" class="btn m-2 btn-danger btn-lg "> Reset </button>
+                    <div class="row ml-2">
+                        <button id="extract" type="button" class="btn btn-success btn-lg "> Extract </button>
+                        <button id="extract-reset" type="button" class="btn ml-2 btn-danger btn-lg "> Reset </button>
                     </div>
-                    <div class="col mt-2">
-                        <div id="extract-msg" class="alert alert-danger" role="alert">
-                        </div>
-                        <div id="extract-done" class="alert alert-success" role="alert">
-                        </div>
-                    </div>
+
                     <hr>
-                    <div class="row m-2">
-                        <h5 id="extract-output"> Extracted text will be displayed here! </h5>
+                    <div class="row ml-2">
+                        <label class="h5" id="extract-output"> Extracted text </label>
                     </div>
-                    <button id="download-text" type="button" class="btn m-2 btn-success btn-lg "> Download message
-                    </button>
+                    <div class="row ml-2">
+                        <button id="download-text" type="button" class="btn btn-success btn-lg "> Download message
+                        </button>
+                    </div>
                     <hr>
                 </form>
+                <div class="mt-2">
+                    <div id="extract-msg" class="alert alert-danger" role="alert">
+                    </div>
+                    <div id="extract-done" class="alert alert-success" role="alert">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -144,8 +154,10 @@
                     <img src="img/goose.jpg" alt="Captian marvel's cat">
                 </div>
                 <div class="row d-flex justify-content-center text-center">
-                    <a href="#main"> <label id="goose" class="h6 text-center" style="text-decoration: underline;"> Use
-                            this image </label></a>
+                    <a href="#main">
+                        <label id="goose" class="h6 text-center" style="text-decoration: underline;"> Use this image
+                        </label>
+                    </a>
                 </div>
             </div>
 
@@ -157,8 +169,10 @@
                     <img src="img/area51.jpg" alt="Area 51">
                 </div>
                 <div class="row d-flex justify-content-center text-center">
-                    <a href="#main"> <label id="area51" class="h6 text-center" style="text-decoration: underline;"> Use
-                            this image </label></a>
+                    <a href="#main">
+                        <label id="area51" class="h6 text-center" style="text-decoration: underline;"> Use this image
+                        </label>
+                    </a>
                 </div>
             </div>
         </div>
@@ -208,7 +222,7 @@
 
         <br>
         <div class="d-flex justify-content-center">
-            <img class="img-fluid" src="img/flow.png">
+            <img class="img-fluid" src="img/flow.png" alt="Proces Flow">
         </div>
 
         <!-- <a href="#main"> <label class="h2" style="text-decoration: underline;">Try it out now!</label> </a> -->
@@ -229,11 +243,13 @@
     <div class="container-fluid mt-2">
         <div class="row pt-2">
             <div id="copyright-1" class="col-md-6">
-                <h6> <a href="terms-and-conditions.html">Terms & Conditions</a> | <a href="privacy-policy.html"> Privacy
-                        Policy </a> </h6>
+                <label class="h6">
+                    <a href="terms-and-conditions.html">Terms & Conditions</a> |
+                    <a href="privacy-policy.html"> Privacy Policy </a>
+                </label>
             </div>
             <div id="copyright-2" class="col-md-6">
-                <h6 class="text-right">Copyright © 2021 InputBlackBoxOutput</h6>
+                <label class="h6 text-right">Copyright © 2021 InputBlackBoxOutput</label>
             </div>
             <hr>
             <script>
@@ -254,12 +270,12 @@
     </div>
 
     <!--About modal-->
-    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="globalModalLabel"
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="modal-about"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="globalModalLabel"> About </h5>
+                    <h5 class="modal-title" id="modal-about"> About </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -279,12 +295,11 @@
     </div>
 
     <!-- Help modal-->
-    <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="globalModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="modal-help" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="globalModalLabel"> Help </h5>
+                    <h5 class="modal-title" id="modal-help"> Help </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
