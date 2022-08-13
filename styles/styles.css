@@ -1,0 +1,45 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: grey;
+}
+
+.container-fluid {
+    background-color: white;
+}
+
+a {
+    color: #006EE5;
+}
+
+#img,
+#img-text {
+    border: 2px #AFAFAF solid;
+    border-radius: 2px;
+}
+
+#embed-open,
+#rand-open {
+    width: 14rem;
+}
+
+#extract-open {
+    width: 15rem;
+}
+
+textarea {
+    resize: none;
+}
+
+.use-this-image {
+    text-decoration: underline;
+}
+
+#disclaimer {
+    color: #FF2020;
+    border: 2px #FF4A4A solid;
+    border-radius: 10px;
+    padding: 10px;
+}
