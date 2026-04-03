@@ -33,10 +33,6 @@ textarea {
     resize: none;
 }
 
-.use-this-image {
-    text-decoration: underline;
-}
-
 #disclaimer {
     color: #FF2020;
     border: 2px #FF4A4A solid;
