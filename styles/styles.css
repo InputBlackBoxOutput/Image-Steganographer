@@ -32,10 +32,3 @@ a {
 textarea {
     resize: none;
 }
-
-#disclaimer {
-    color: #FF2020;
-    border: 2px #FF4A4A solid;
-    border-radius: 10px;
-    padding: 10px;
-}
