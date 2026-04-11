@@ -22,10 +22,11 @@ const source_image = document.getElementById('img');
 document.getElementById('embed-open').addEventListener('click', function () { openImage(1); });
 
 rand_img = false;
-rand_img = document.getElementById('rand-open');
-rand_img.addEventListener('click', function () {
-    n = (Math.floor(Math.random() * 15) + 1);
-    source_image.src = `img/random/rand_img (${n}).png`;
+const rand_img_btn = document.getElementById('rand-open');
+
+rand_img_btn.addEventListener('click', function () {
+    source_image.crossOrigin = 'anonymous';
+    source_image.src = `https://picsum.photos/200/200?random=${Date.now()}`;
 
     source_image.onload = function () {
         canvas.width = source_image.offsetWidth;
